@@ -6,8 +6,35 @@ export function activate(context: vscode.ExtensionContext) {
     console.log("Congratulations, your extension 'highlight-trailing-white-spaces' is now active!");
 
     let enableTrailingWSHlCmd = vscode.commands.registerCommand("extension.enableTrailingWSHl", () => {
+        console.log("The extension 'highlight-trailing-white-spaces' is being enabled.");
+
+        vscode.window.onDidChangeActiveTextEditor(editor => {
+            if (!editor) {
+                console.error("onDidChangeActiveTextEditor(" + editor + "): no active text editor.");
+                return;
+            }
+            updateDecorations(editor);
+        }, null, context.subscriptions);
+
+        vscode.window.onDidChangeTextEditorSelection(event => {
+            if (!event.textEditor) {
+                console.error("onDidChangeTextEditorSelection(" + event + "): no active text editor.");
+                return;
+            }
+            updateDecorations(event.textEditor);
+        }, null, context.subscriptions);
+
+        vscode.workspace.onDidChangeTextDocument(event => {
+            if (!vscode.window.activeTextEditor) {
+                console.error("onDidChangeTextDocument(" + event + "): no active text editor.");
+                return;
+            }
+            updateDecorations(vscode.window.activeTextEditor);
+        }, null, context.subscriptions);
+
         updateDecorations(vscode.window.activeTextEditor);
     });
+
     context.subscriptions.push(enableTrailingWSHlCmd);
 
     let trailingSpacesDecorationType = vscode.window.createTextEditorDecorationType({
@@ -43,5 +70,5 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
-    console.log("The extension 'highlight-trailing-white-spaces' is now disabled.");
+    console.log("The extension 'highlight-trailing-white-spaces' is now deactivated.");
 }
