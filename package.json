@@ -1,14 +1,19 @@
 {
     "name": "highlight-trailing-white-spaces",
     "displayName": "Highlight Trailing White Spaces",
-    "description": "This extension highlight white spaces in red.",
+    "description": "This extension highlight trailing white spaces in red.",
     "version": "0.0.1",
-    "publisher": "yves",
+    "license": "BSD-3-Clause",
+    "publisher": "ybaumes",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yifu/highlight-trailing-whitespaces"
+    },
     "engines": {
         "vscode": "^1.0.0"
     },
     "categories": [
-        "Other"
+        "Linters"
     ],
     "activationEvents": [
         "*"
