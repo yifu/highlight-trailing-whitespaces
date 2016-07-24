@@ -8,6 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
     let enableTrailingWSHlCmd = vscode.commands.registerCommand("extension.enableTrailingWSHl", () => {
         updateDecorations(vscode.window.activeTextEditor);
     });
+    context.subscriptions.push(enableTrailingWSHlCmd);
 
     let trailingSpacesDecorationType = vscode.window.createTextEditorDecorationType({
         backgroundColor: "rgba(255,0,0,0.3)"
@@ -39,7 +40,6 @@ export function activate(context: vscode.ExtensionContext) {
         }
         activeTextEditor.setDecorations(trailingSpacesDecorationType, decorationOptions);
     }
-    context.subscriptions.push(enableTrailingWSHlCmd);
 }
 
 export function deactivate() {
