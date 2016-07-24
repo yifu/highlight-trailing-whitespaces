@@ -10,7 +10,6 @@ export function activate(context: vscode.ExtensionContext) {
 
         vscode.window.onDidChangeActiveTextEditor(editor => {
             if (!editor) {
-                console.error("onDidChangeActiveTextEditor(" + editor + "): no active text editor.");
                 return;
             }
             updateDecorations(editor);
