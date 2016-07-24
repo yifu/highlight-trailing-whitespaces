@@ -11,14 +11,10 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.enableTrailingWSHl"
+        "*"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.enableTrailingWSHl",
-            "title": "Enable Trailing White Spaces Highlihting"
-        }]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
