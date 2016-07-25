@@ -4,6 +4,10 @@
     "description": "This extension highlight trailing white spaces in red.",
     "version": "0.0.1",
     "license": "BSD-3-Clause",
+    "bugs": {
+        "url": "https://github.com/yifu/highlight-trailing-whitespaces/issues",
+        "email": "ybaumes@gmail.com"
+    },
     "publisher": "ybaumes",
     "repository": {
         "type": "git",
