@@ -2,7 +2,7 @@
     "name": "highlight-trailing-white-spaces",
     "displayName": "Highlight Trailing White Spaces",
     "description": "This extension highlight trailing white spaces in red.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "BSD-3-Clause",
     "bugs": {
         "url": "https://github.com/yifu/highlight-trailing-whitespaces/issues",
