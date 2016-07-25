@@ -44,7 +44,7 @@ export function activate(context: vscode.ExtensionContext) {
         for (let i = 0; i < doc.lineCount; i++) {
             let lineText = doc.lineAt(i);
             let line = lineText.text;
-            if (i === activeTextEditor.selection.active.line || lineText.isEmptyOrWhitespace) {
+            if (i === activeTextEditor.selection.active.line) {
                 continue;
             }
 

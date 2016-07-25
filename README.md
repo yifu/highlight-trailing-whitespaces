@@ -1,6 +1,6 @@
 # highlight-trailing-white-spaces README
 
-This extension highlight in red color trailing white spaces on non blank lines.
+This extension highlight in red color trailing white spaces.
 
 ## Example
 
